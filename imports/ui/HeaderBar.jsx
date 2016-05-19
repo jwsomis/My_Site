@@ -13,7 +13,7 @@ export default class HeaderBar extends Component {
 		return (
 			<div className='headerBar'>
 				<img src="/img/CoverText.png" />
-				<button className='ui middle button'><i className='sidebar icon'></i></button>
+				{/*<button className='ui middle button'><i className='sidebar icon'></i></button>*/}
 				<div className='ui fluid popup headerMenu'>
 					Nothing to put here yet!
 				</div>

@@ -50,14 +50,14 @@ export default class MenuBar extends Component {
 				<a className="item">
 				  Contact
 				</a>
-				<div className="right menu">
+				{/*<div className="right menu">
 				  <div className="item">
 				    <div className="ui transparent icon input">
 				      <input type="text" placeholder="Search..." />
 				      <i className="search link icon"></i>
 				    </div>
 				  </div>
-				</div>
+				</div>*/}
 			</div>
 		);
 	}
