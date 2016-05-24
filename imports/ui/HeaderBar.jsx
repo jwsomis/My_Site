@@ -12,7 +12,8 @@ export default class HeaderBar extends Component {
 	render() {
 		return (
 			<div className='headerBar'>
-				<img src="/img/CoverText.png" />
+				<div className='colorBar'></div>
+				<img src="/img/HeaderLarge.png" />
 				{/*<button className='ui middle button'><i className='sidebar icon'></i></button>*/}
 				<div className='ui fluid popup headerMenu'>
 					Nothing to put here yet!

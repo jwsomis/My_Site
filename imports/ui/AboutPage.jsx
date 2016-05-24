@@ -74,12 +74,14 @@ export default class AboutPage extends Component {
 						<div className='content'>
 							<a className='header'>Semantic Web Development</a>
 							<div className='description'>
-								This will be a paragraph about semantic web experience.
+								I have extensive experience working in RDF, primarily with Allegrograh
+								as the database. I have lead multiple projects and trained colleagues in
+								utilizing Linked Data as a tool.
 							</div>
 						</div>
 					</div>
 
-					<div className='item'>
+					{/*<div className='item'>
 						<div className='content'>
 							<a className='header'>Mobile Development</a>
 							<div className='description'>
@@ -89,7 +91,7 @@ export default class AboutPage extends Component {
 						<div className='image right'>
 							<img className="ui medium circular image" src="/img/android-wave.jpg"/>
 						</div>
-					</div>
+					</div>*/}
 				</div>
 		);
 	}

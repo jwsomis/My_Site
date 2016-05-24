@@ -32,7 +32,7 @@ export class ExperienceSection extends Component {
 			<div className='ui segment'>
 				<h4 className='ui header'>Software Engineer - BAE Systems, San Diego, CA</h4>
 				<span className='metadata'>December 2013 - Present</span>
-				<div className='ui centered grid container'>
+				<div className='ui centered stackable grid container'>
 					<div className='five wide column centerMe'>
 					<h5 className='ui header'>Cloud-Based Search Engine</h5>
 						<div className='ui list'>
@@ -90,6 +90,20 @@ export class Skills extends Component {
 	render() {
 		return (
 			<div>
+				<div>Javascript (React, Meteor, jQuery)</div>
+				<div>Java</div>
+				<div>Python</div>
+				<div>C/C++</div>
+				<div>HTML/CSS (Semantic UI, Bootstrap)</div>
+				<div>RDF (SPARQL, Turtle, etc)</div>
+				<div>Bash/Shell</div>
+				<div>SQL</div>
+			</div>
+		);
+	}
+	/*render() {
+		return (
+			<div>
 			<h3 className='ui header'>Skills & Languages</h3>
 			<div className='ui centered grid container'>
 				<div className='three column centered row'>
@@ -132,5 +146,5 @@ export class Skills extends Component {
 			</div>
 			</div>
 		);
-	}
+	}*/
 }
