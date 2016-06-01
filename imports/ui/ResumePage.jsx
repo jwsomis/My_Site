@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 export default class AboutPage extends Component {
 	render() {
@@ -17,7 +18,7 @@ export default class AboutPage extends Component {
 					</div>
 				</div>
 				<div className='row'>
-					<Skills />
+					<SkillsList />
 				</div>
 			</div>
 		);
@@ -86,65 +87,44 @@ export class ExperienceSection extends Component {
 	}
 }
 
-export class Skills extends Component {
+export class SkillsList extends Component {
 	render() {
+		let style = {listStyle:'none'}
+		let skillsSrc = [
+			{src: 'html-css', title:'HTML/CSS'},
+			{src: 'javascript', title:'Javascript'},
+			{src: 'react', title:'React'},
+			{src: 'meteor', title:'Meteor'},
+			{src: 'java', title:'Java'},
+			{src: 'python', title:'Python'},
+			{src: 'c-plus', title:'C/C++'},
+			{src: 'rdf', title:'RDF'},
+			{src: 'sql', title:'SQL'},
+			{src: 'linux', title:'Linux'},
+			{src: 'windows', title:'Windows'},
+			{src: 'bash', title:'Bash'}/*,
+			{src: '', title:'jQuery'}*/
+		];
+		let skills = skillsSrc.map((img) => <Skill img={img} />);
+		console.log(skills);
 		return (
-			<div>
-				<div>Javascript (React, Meteor, jQuery)</div>
-				<div>Java</div>
-				<div>Python</div>
-				<div>C/C++</div>
-				<div>HTML/CSS (Semantic UI, Bootstrap)</div>
-				<div>RDF (SPARQL, Turtle, etc)</div>
-				<div>Bash/Shell</div>
-				<div>SQL</div>
-			</div>
+			<ul>
+				{skills}
+			</ul>
 		);
 	}
-	/*render() {
-		return (
-			<div>
-			<h3 className='ui header'>Skills & Languages</h3>
-			<div className='ui centered grid container'>
-				<div className='three column centered row'>
-					<div className='column centerMe'>
-						<h4 className='ui header'>Programming & Scripting Languages</h4>
-						<div className='ui centered grid container'>
-							<div className='four wide column centerMe'>Javascript (React, Meteor, jQuery)</div>
-							<div className='four wide column centerMe'>Java</div>
-							<div className='four wide column centerMe'>Python</div>
-							<div className='four wide column centerMe'>C/C++</div>
-							<div className='four wide column centerMe'>HTML/CSS (Semantic UI, Bootstrap)</div>
-							<div className='four wide column centerMe'>RDF (SPARQL, Turtle, etc)</div>
-							<div className='four wide column centerMe'>Bash/Shell</div>
-							<div className='four wide column centerMe'>SQL</div>
-						</div>
+}
+
+export class Skill extends Component {
+	render () {
+		let img = this.props.img;
+		return(
+				<li className='skillItem'>
+					<div className='popUp'>
+						<img src={'/img/Resume-Skills/'+img.src+'.png'} title={img.title} />
+						<div className='skillName'>{img.title}</div>
 					</div>
-					<div className='two wide column'></div>
-					<div className='column centerMe'>
-						<h4 className='ui header'>Software</h4>
-						<div className='ui centered grid container'>
-							<div className='four wide column centerMe'>Amazon Web Services/Eucalyptus</div>
-							<div className='four wide column centerMe'>Meteor</div>
-							<div className='four wide column centerMe'>RDF Stores (Allegrograph, Sesame, Blueprints)</div>
-							<div className='four wide column centerMe centerMe'>NoSQL (DynamoDB, MongoDB)</div>
-							<div className='four wide column centerMe centerMe centerMe'>Apache/Tomcat</div>
-							<div className='four wide column centerMe'>VrtualBox</div>
-							<div className='four wide column centerMe'>Maven</div>
-							<div className='four wide column centerMe centerMe'>Ansible</div>
-						</div>
-					</div>
-				</div>
-				<div className='row column centerMe'>
-					<h4 className='ui header'>Operating Systems</h4>
-					<div className='ui centered grid container'>
-						<div className='four wide column centerMe'>Linux (Ubuntu, CentOS, RHEL)</div>
-						<div className='four wide column centerMe'>Windows 7, 8.1, 10</div>
-						<div className='four wide column centerMe'>OSx</div>
-					</div>
-				</div>
-			</div>
-			</div>
+				</li>
 		);
-	}*/
+	}
 }

@@ -27,11 +27,36 @@ body {
 	left:2.8%;
 	top:9%;
 }
+@keyframes ripple {
+    0%   {background: linear-gradient(to left, #859398 , rgba(11,108,140,0.7));}
+    /*25%  {background: linear-gradient(to left, #859398 , rgba(11,108,140,0.7));}*/
+    100%  {background: linear-gradient(to left, rgba(11,108,140,0.7), #859398);}
+    /*75%  {background-color: green; left:0px; top:200px;}*/
+    /*100% {background: linear-gradient(to left, #859398 , rgba(11,108,140,0.7));}*/
+}
+@keyframes rippleReverse {
+    0%  {background: linear-gradient(to left, rgba(11,108,140,0.7), #859398,rgba(11,108,140,0.7));}
+    100%   {background: linear-gradient(to left, #859398 , rgba(11,108,140,0.7), #859398);}
+    /*25%  {background: linear-gradient(to left, #859398 , rgba(11,108,140,0.7));}*/
+    /*75%  {background-color: green; left:0px; top:200px;}*/
+    /*100% {background: linear-gradient(to right, #859398 , rgba(11,108,140,0.7));}*/
+}
 .colorBar {
 	height:33vh;
 	max-height:239px;
 	width: 100%;
-	background-color:rgba(11,108,140,0.7);
+	/*background-color:rgba(11,108,140,0.7);*/
+	background: #E6DADA; /* fallback for old browsers */
+	/*background: -webkit-linear-gradient(to left, #859398 , rgba(11,108,140,0.7)); /* Chrome 10-25, Safari 5.1-6 **/
+	/*background: linear-gradient(to left, #859398 , rgba(11,108,140,0.7));  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	
+	/*animation-name: ripple;*/
+	/*animation-duration: 4s;*/
+	/*animation-iteration-count: infinite;*/
+	background:linear-gradient(to left, rgba(11,108,140,0.7), #859398,rgba(11,108,140,0.7));;
+	/*Other options
+	#859398
+	#283048*/
 }
 .headerBar button {
 	float: right;
@@ -110,6 +135,48 @@ body {
 	/*float:right;*/
 }
 
+.skillItem {
+	display:inline-block;
+	padding: 0 4px;
+}
+.popUp {
+	max-height: 50px;
+	max-width: 100px;
+	-webkit-transition: -webkit-transform .5s ease-out; 
+    -moz-transition: -moz-transform .5s ease-out;
+    -o-transition: -o-transform .5s ease-out; 
+    transition: transform .5s ease-out;
+	transform: scale(1);
+	transition: all .5s ease-out;
+	background-color: white;
+	z-index:0;
+}
+.popUp img{
+	max-height: 50px;
+	max-width: 100px;
+	vertical-align: middle;
+}
+.popUp .skillName {
+	display:none;
+}
+.popUp:hover {
+	-moz-transform: scale(3,3);
+    -webkit-transform: scale(3,3);
+    -o-transform: scale(3,3);
+	background-color:rgba(256, 256, 256, 0.5);
+	z-index:4;
+	position: absolute;
+	left:50%;
+	top:-50%;
+	transform: translate(-50%, -50%) scale(3,3);
+	-webkit-box-shadow:0px 0px 5px 10px rgba(128, 128, 128, 0.5);
+	-moz-box-shadow:0px 0px 5px 10px gray;
+	box-shadow:0px 0px 5px 10px rgba(128, 128, 128, 0.5);
+}
+.popUp:hover .skillName {
+	display:inherit;
+}
+
 @media (min-height: 725px) {
 	.headerBar img {
 		top:65px;
@@ -120,4 +187,7 @@ body {
 	.headerBar img {
 		top:1.5%;
 	}
+	/*.skillItem {
+		display:block;
+	}*/
 }
